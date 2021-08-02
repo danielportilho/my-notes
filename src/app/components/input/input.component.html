@@ -1,0 +1,4 @@
+<div class="field" [ngClass]="{'no-padding': !label}">
+    <ng-content></ng-content>
+    <label *ngIf="label">{{ label }}</label>
+</div>

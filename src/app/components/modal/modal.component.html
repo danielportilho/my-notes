@@ -1,0 +1,18 @@
+<div *ngIf="show" class="modal">
+    <div class="modal-wrapper">
+
+        <div class="modal-container">
+            <div class="modal-container-wrapper">
+    
+                <ng-content select="[close]"></ng-content>
+                
+                <div class="modal-content-container">
+                    <ng-content select="[container]"></ng-content>
+                </div>
+    
+            </div>
+        </div>
+        <div (click)="close()" class="modal-background"></div>
+    </div>
+    
+</div>

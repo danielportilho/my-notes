@@ -1,0 +1,26 @@
+@import '../../../assets/styles/variables.scss';
+
+.button {
+    border: none;
+    background-color: $primary-color;
+    padding: 13px 25px;
+    border-radius: 25px;
+    color: $white;
+    font-family: $font-medium;
+    font-size: 14px;
+    text-transform: uppercase;
+    transform: translateY(0px);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0,0,0,0.5);
+    transition: all .2s ease;
+
+    svg {
+        margin-left: 6px;
+    }
+    
+    &:hover {
+        transform: translateY(-2px);
+        background-color: $secondary-color;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+}

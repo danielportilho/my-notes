@@ -1,0 +1,54 @@
+@import '../../../assets/styles/variables.scss';
+
+
+/* :host ::ng-deep button {
+
+} */
+.field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 16px 0 0 0;
+
+    label {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        font-family: $font-bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $gray-heavy;
+    }
+}
+
+::ng-deep textarea {
+    min-height: 120px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+::ng-deep textarea,
+::ng-deep input {
+    border: 1px solid $gray-medium;
+    box-shadow: 0 0 0 $primary-color;
+    padding: 10px 6px;
+    border-radius: 4px;
+    font-family: $font-medium;
+    font-size: 16px;
+    transition: all .3s ease;
+    outline: none;
+    background-color: $white;
+    color: $dark-color;
+    
+    &:focus {
+        border: 1px solid $primary-color;
+        box-shadow: 0 0 4px $primary-color;
+        background-color: $light-color;
+    }
+
+    &:focus + label {
+        color: $primary-color !important;
+    }
+}

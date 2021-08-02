@@ -1,0 +1,26 @@
+<div class="main">
+    <app-header [pageTitle]="'EDIT NOTE'"></app-header>
+
+    <div class="body-content">
+        <div class="container margin-aside">
+
+            <form class="form" [formGroup]="editNoteForm">
+                <app-input class="app-input margin-bottom-25" [label]="'Title'">
+                    <input placeholder="Insert a title for your note" class="input" type="text" formControlName="title" name="title" />
+                </app-input>
+
+                <app-input class="app-input margin-bottom-25" [label]="'Description'">
+                    <textarea class="input" formControlName="description" name="description">Add some description...</textarea>
+                </app-input>
+                
+
+                <div class="margin-bottom-25">
+                    <app-button (click)="noteService.saveNote(note.id, editNoteForm)">SAVE NOTE</app-button>
+                    <a class="cancel-button" (click)="noteService.cancel()">Cancel</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

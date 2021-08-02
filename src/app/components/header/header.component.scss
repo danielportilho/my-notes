@@ -1,0 +1,31 @@
+@import '../../../assets/styles/variables.scss';
+
+.header {
+    background-image: linear-gradient(to right, $primary-color , $secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    
+    .header-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .header-back-button,
+        .header-title,
+        .header-search {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .header-title {
+            font-family: $font-medium;
+            color: $white;
+        }
+    }
+}
