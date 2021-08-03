@@ -27,6 +27,6 @@ export class NewNoteComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 }
