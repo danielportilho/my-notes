@@ -25,13 +25,11 @@ export class MyNotesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.showModal);
   }
 
   openNote(id: number) {
     this.showModal = true;
     this.noteModal = this.user.notes.find(note => note.id === id);
-    console.log(this.showModal);
   }
 
   closeModal() {

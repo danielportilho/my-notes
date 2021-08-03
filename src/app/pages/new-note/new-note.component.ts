@@ -29,8 +29,4 @@ export class NewNoteComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  addTag(control: FormControl) {
-    console.log(control);
-  }
 }
