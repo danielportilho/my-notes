@@ -1,10 +1,9 @@
 import { NoteService } from './../../service/note.service';
 import { LocalStorageService } from './../../service/local-storage.service';
 import { User } from './../../models/user.model';
-import { Tag } from './../../models/tag.model';
 import { Note } from './../../models/note.model';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-note',
@@ -13,11 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewNoteComponent implements OnInit {
 
-  user = new User();
+  user: User;
   note = new Note();
   newNoteForm: FormGroup;
-  tags: Tag[] = [];
-  tag: Tag;
 
   constructor(
     public localStorageService: LocalStorageService,
@@ -26,11 +23,14 @@ export class NewNoteComponent implements OnInit {
 
     this.newNoteForm = this.fb.group({
       title: [''],
-      description: [''],
-      tag: ['']
+      description: ['']
     });
   }
 
   ngOnInit(): void {
+  }
+
+  addTag(control: FormControl) {
+    console.log(control);
   }
 }

@@ -5,23 +5,18 @@
             <app-input class="app-input">
                 <input placeholder="search note..." type="text" [(ngModel)]="search" />
             </app-input>
-            
         </div>
     </app-header>
 
     <div class="body-content">
-
         <div class="container margin-aside">
 
             <div class="new-note-container margin-bottom-25">
                 <h3 class="heading-2-bold">Hello, {{ user.name }}</h3>
                 <app-button *ngIf="user.notes.length !== 0" [useIcon]="true" (click)="noteService.goTo('/new-note')">add note</app-button>
-                
             </div>
 
-
             <div class="user-notes-container">
-
                 <div class="message-box" *ngIf="user.notes.length === 0">
                     <h2 class="message-box-text heading-1-medium margin-bottom-25">
                         You have no notes yet. Add some!
@@ -30,10 +25,8 @@
                 </div>
 
                 <div class="notes-container" *ngIf="user.notes.length > 0">
-                    
                     <ul class="notes">
                         <li class="note" (click)="openNote(note.id)" *ngFor="let note of ((search && search.length >= 1) ? (user.notes | search: 'title':search) : (user.notes))">
-                            
                             <div class="note-info">
                                 <h3 class="note-title" [innerHtml]="note.title"></h3>
                                 <p class="note-date" [innerHtml]="note.dateCreate | date:'medium'"></p>
@@ -48,19 +41,14 @@
                                 </svg>
                             </div>
                         </li>
-                        
                     </ul>
                 </div>
-                
             </div>
         </div>
-    
     </div>
-
 </div>
 
 <app-modal (cancel)="closeModal()" class="app-modal" *ngIf="noteModal" [show]="showModal">
-
     <div close class="modal-close" (click)="showModal = false">
         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -69,9 +57,7 @@
             </g>
         </svg>
     </div>
-
     <div container class="modal-container">
-
         <div class="modal-content">
             <h1 class="note-title">{{ noteModal.title }}</h1>
             <p class="note-date">{{ noteModal.dateCreate | date: 'medium' }}</p>
@@ -83,5 +69,3 @@
         </div>
     </div>
 </app-modal>
-
-
